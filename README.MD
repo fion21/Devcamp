@@ -43,6 +43,43 @@ Now in the console, start on the major project
 
 `npm install —save—dev nodemon`
 
+## Routes set-up
+
+Express has been brought in, the basic links are being derived.
+
+const express = require('express');
+const router = express.Router();
 
 
+app.get('api/v1/bootcamps', (req, res) => {
+    res.status(200)
+    .json({success: true, msg: 'Show all bootcamps'});
+    });
+
+
+
+    app.get('api/v1/bootcamps/:id', (req, res) => {
+        res
+        .status(200)
+        .json({success: true, msg: `Show bootcamps ${req.params.id}` });
+        });
+
+
+app.get('api/v1/bootcamps', (req, res) => {
+    res.status(200)
+    .json({success: true, msg: 'Show all bootcamps'});
+    });
+
+
+app.get('api/v1/bootcamps', (req, res) => {
+    res.status(200)
+    .json({success: true, msg: 'Show all bootcamps'});
+    });
+
+
+## Fixed Error
+// Load env vars
+//dotenv.config({ path: './config/config.env' });
+const path = require('path')
+require('dotenv').config({ path: path.resolve(__dirname, './config/config.env') })
 
