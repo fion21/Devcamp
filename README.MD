@@ -19,8 +19,10 @@ ______
 `const {headers, url, method }= req;
 console.log(headers, url, method);`
 
-Run this through postman at http:localhost:5000
- Fig postman3.png
+Run this through postman at `http:localhost:5000`
+ 
+ ![](https://github.com/fion21/Devcamp/blob/main/src/postman3.png?raw=true)
+ 
 
 ’npm install —save—dev nodemon’
 
@@ -35,6 +37,8 @@ Check the devDependencies in package.json to see that nodemon has been correctly
 Then  ‘npm start’ will get what you have got already on port 5000.
 
 const PORT= 5000 was in the server.js file.
+
+ ![](https://github.com/fion21/Devcamp/blob/main/src/postman4.png?raw=true)
 
 ______
 
@@ -53,32 +57,11 @@ Express has been brought in, the basic links are being derived.
 const express = require('express');
 const router = express.Router();
 
-
 app.get('api/v1/bootcamps', (req, res) => {
     res.status(200)
     .json({success: true, msg: 'Show all bootcamps'});
     });
-
-
-
-    app.get('api/v1/bootcamps/:id', (req, res) => {
-        res
-        .status(200)
-        .json({success: true, msg: `Show bootcamps ${req.params.id}` });
-        });
-
-
-app.get('api/v1/bootcamps', (req, res) => {
-    res.status(200)
-    .json({success: true, msg: 'Show all bootcamps'});
-    });
-
-
-app.get('api/v1/bootcamps', (req, res) => {
-    res.status(200)
-    .json({success: true, msg: 'Show all bootcamps'});
-    });
-
+______
 
 ## Fixed Error
 // Load env vars
@@ -86,9 +69,12 @@ app.get('api/v1/bootcamps', (req, res) => {
 const path = require('path')
 require('dotenv').config({ path: path.resolve(__dirname, './config/config.env') })
 
+______
+## Security, database, colours
+
 abstraction layer for nosql and security
 added mongoose
 
 `npm i colors`
 added colors to the output of text
-${conn.connection.host}`.cyan.underline.bold); so that it is really easy to read in the console.
+${conn.connection.host}`.cyan.underline.bold);` so that it is really easy to read in the console.
