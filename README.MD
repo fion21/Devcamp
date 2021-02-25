@@ -1,17 +1,20 @@
-Create a server.js file, this is a creation of the server
-
+## Replica Education Course Directory
+#### API, Auth, GPPD/CRUD, NoSQL or any data source
+##### Project run through gist
+The project aims to have various pieces of code which can be re-used for
+basic or high-level projects from this stage. The data source could be using
+a mock api to simulate a project in it's early stages of mvp (minimal viable product) of greater monetary value prior to stakeholders' approval.
+Notes:
+Create a `server.js` file, this is a creation of the server
 http is already embedded in the node modules, just bring it in as a const, no need to use the cli command
-Use postman a headless browser without the gui.
+Use `postman` a headless browser without the gui.
 After console.log add
-`Res.end`
-
-Will automatically give a 200 response.
+`Res.end` Will automatically give a 200 response.
 The response so far is:
-
-`Url:”/“,
-Method: “GET”`
+`Url:”/“, Method: “GET”`
 
 Control +C quit the server and re-run in postman
+______
 
 `const {headers, url, method }= req;
 console.log(headers, url, method);`
@@ -83,3 +86,9 @@ app.get('api/v1/bootcamps', (req, res) => {
 const path = require('path')
 require('dotenv').config({ path: path.resolve(__dirname, './config/config.env') })
 
+abstraction layer for nosql and security
+added mongoose
+
+`npm i colors`
+added colors to the output of text
+${conn.connection.host}`.cyan.underline.bold); so that it is really easy to read in the console.
